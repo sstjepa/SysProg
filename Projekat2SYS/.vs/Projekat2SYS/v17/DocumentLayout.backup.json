@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5429E77-46B9-4930-84A3-A85DCE059776}|Projekat2SYS\\Projekat2SYS.csproj|d:\\repos\\#c(taraba)\\projekat2sys\\projekat2sys\\webserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5429E77-46B9-4930-84A3-A85DCE059776}|Projekat2SYS\\Projekat2SYS.csproj|solutionrelative:projekat2sys\\webserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5429E77-46B9-4930-84A3-A85DCE059776}|Projekat2SYS\\Projekat2SYS.csproj|d:\\repos\\#c(taraba)\\projekat2sys\\projekat2sys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5429E77-46B9-4930-84A3-A85DCE059776}|Projekat2SYS\\Projekat2SYS.csproj|solutionrelative:projekat2sys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebServer.cs",
+              "DocumentMoniker": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\Projekat2SYS\\WebServer.cs",
+              "RelativeDocumentMoniker": "Projekat2SYS\\WebServer.cs",
+              "ToolTip": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\Projekat2SYS\\WebServer.cs",
+              "RelativeToolTip": "Projekat2SYS\\WebServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T17:08:29.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\Projekat2SYS\\Program.cs",
+              "RelativeDocumentMoniker": "Projekat2SYS\\Program.cs",
+              "ToolTip": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\Projekat2SYS\\Program.cs",
+              "RelativeToolTip": "Projekat2SYS\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T17:08:00.468Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

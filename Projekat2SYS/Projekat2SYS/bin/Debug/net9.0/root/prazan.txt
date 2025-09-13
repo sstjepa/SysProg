@@ -1,0 +1,2 @@
+Ovaj fajl nema palindrome.
+Samo obične reči.

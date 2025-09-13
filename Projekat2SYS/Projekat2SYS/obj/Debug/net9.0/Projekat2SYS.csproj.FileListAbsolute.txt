@@ -1,0 +1,14 @@
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\bin\Debug\net9.0\Projekat2SYS.exe
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\bin\Debug\net9.0\Projekat2SYS.deps.json
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\bin\Debug\net9.0\Projekat2SYS.runtimeconfig.json
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\bin\Debug\net9.0\Projekat2SYS.dll
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\bin\Debug\net9.0\Projekat2SYS.pdb
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.AssemblyInfoInputs.cache
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.AssemblyInfo.cs
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.csproj.CoreCompileInputs.cache
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.dll
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\refint\Projekat2SYS.dll
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.pdb
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\Projekat2SYS.genruntimeconfig.cache
+D:\Repos\#C(taraba)\Projekat2SYS\Projekat2SYS\obj\Debug\net9.0\ref\Projekat2SYS.dll

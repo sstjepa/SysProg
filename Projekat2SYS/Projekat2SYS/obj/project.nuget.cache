@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "h7QqMTKAjmM=",
+  "success": true,
+  "projectFilePath": "D:\\Repos\\#C(taraba)\\Projekat2SYS\\Projekat2SYS\\Projekat2SYS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\stjepaa\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\9.0.9\\microsoft.dotnet.ilcompiler.9.0.9.nupkg.sha512",
+    "C:\\Users\\stjepaa\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.9\\microsoft.net.illink.tasks.9.0.9.nupkg.sha512",
+    "C:\\Users\\stjepaa\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.9\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
