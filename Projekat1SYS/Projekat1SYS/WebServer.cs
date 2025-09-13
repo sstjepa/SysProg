@@ -10,15 +10,12 @@ namespace Projekat1SYS
         private readonly HttpListener _listener = new HttpListener();
         private readonly string _rootDirectory;
         private readonly ConcurrentDictionary<string, string> _cache = new ConcurrentDictionary<string, string>();
-
         private static readonly object _consoleLock = new object();
 
         public WebServer(string prefix, string rootDirectory)
         {
             if (!HttpListener.IsSupported)
-            {
                 throw new NotSupportedException("HttpListener nije podržan na ovom sistemu.");
-            }
 
             _listener.Prefixes.Add(prefix);
             _rootDirectory = Path.GetFullPath(rootDirectory);
@@ -30,22 +27,22 @@ namespace Projekat1SYS
             }
         }
 
-        public async Task Start()
+        public void Start()
         {
             _listener.Start();
             Log($"Server pokrenut. Očekujem zahteve na: {_listener.Prefixes.First()}");
             Log($"Root direktorijum za pretragu fajlova: {_rootDirectory}");
-
             while (_listener.IsListening)
             {
                 try
                 {
-                    var context = await _listener.GetContextAsync();
+                    var context = _listener.GetContext();
 
-                    Task.Run(() => ProcessRequestAsync(context));
+                    ThreadPool.QueueUserWorkItem(ProcessRequest, context);
                 }
                 catch (HttpListenerException)
                 {
+                    Log("Server se zaustavlja.");
                     break;
                 }
                 catch (Exception ex)
@@ -61,38 +58,41 @@ namespace Projekat1SYS
             _listener.Close();
         }
 
-        private async Task ProcessRequestAsync(HttpListenerContext context)
+        private void ProcessRequest(object? state)
         {
-            var request = context.Request;
-            string fileName = request.Url?.AbsolutePath.TrimStart('/') ?? string.Empty;
-
-            Log($"Primljen zahtev: {request.HttpMethod} {request.Url} od {request.RemoteEndPoint}");
-
-            if (request.HttpMethod != "GET" || string.IsNullOrWhiteSpace(fileName))
-            {
-                await SendResponseAsync(context, "Neispravan zahtev. Koristiti GET metodu sa nazivom fajla.", HttpStatusCode.BadRequest);
-                return;
-            }
-
-            // 1. Provera keša
-            if (_cache.TryGetValue(fileName, out string? cachedResponse))
-            {
-                Log($"[CACHE HIT] Za fajl '{fileName}'. Vraćam keširani odgovor.");
-                await SendResponseAsync(context, cachedResponse, HttpStatusCode.OK);
-                return;
-            }
-
-            Log($"[CACHE MISS] Za fajl '{fileName}'. Krećem u pretragu i obradu.");
+            if (state is not HttpListenerContext context) return;
 
             try
             {
+                var request = context.Request;
+                string fileName = request.Url?.AbsolutePath.TrimStart('/') ?? string.Empty;
+
+                Log($"Primljen zahtev: {request.HttpMethod} {request.Url} od {request.RemoteEndPoint}");
+
+                if (request.HttpMethod != "GET" || string.IsNullOrWhiteSpace(fileName))
+                {
+                    SendResponse(context, "Neispravan zahtev. Koristiti GET metodu sa nazivom fajla.", HttpStatusCode.BadRequest);
+                    return;
+                }
+
+                // 1. Provera keša
+                if (_cache.TryGetValue(fileName, out string? cachedResponse))
+                {
+                    Log($"[CACHE HIT] Za fajl '{fileName}'. Vraćam keširani odgovor.");
+                    SendResponse(context, cachedResponse, HttpStatusCode.OK);
+                    return;
+                }
+
+                Log($"[CACHE MISS] Za fajl '{fileName}'. Krećem u pretragu i obradu.");
+
+
                 // 2. Pretraga fajla
                 var foundFiles = Directory.GetFiles(_rootDirectory, fileName, SearchOption.AllDirectories);
 
                 if (foundFiles.Length == 0)
                 {
                     Log($"[GREŠKA] Fajl '{fileName}' nije pronađen.");
-                    await SendResponseAsync(context, $"Greška: Fajl '{fileName}' nije pronađen.", HttpStatusCode.NotFound);
+                    SendResponse(context, $"Greška: Fajl '{fileName}' nije pronađen.", HttpStatusCode.NotFound);
                     return;
                 }
 
@@ -100,7 +100,7 @@ namespace Projekat1SYS
                 Log($"Fajl pronađen na putanji: {filePath}");
 
                 // 3. Čitanje fajla i brojanje palindroma
-                string content = await File.ReadAllTextAsync(filePath);
+                string content = File.ReadAllText(filePath);
 
                 var words = Regex.Split(content.ToLower(), @"\W+").Where(w => !string.IsNullOrWhiteSpace(w));
 
@@ -119,12 +119,15 @@ namespace Projekat1SYS
                 // 4. Keširanje rezultata i slanje odgovora
                 _cache[fileName] = responseMessage;
                 Log($"[KEŠIRANO] Rezultat za '{fileName}'.");
-                await SendResponseAsync(context, responseMessage, HttpStatusCode.OK);
+                SendResponse(context, responseMessage, HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
-                Log($"[GREŠKA] Došlo je do greške prilikom obrade fajla '{fileName}': {ex.Message}");
-                await SendResponseAsync(context, "Greška na serveru prilikom obrade zahteva.", HttpStatusCode.InternalServerError);
+                Log($"[GREŠKA] Došlo je do greške prilikom obrade fajla: {ex.Message}");
+                if (context.Response.OutputStream.CanWrite)
+                {
+                    SendResponse(context, "Greška na serveru prilikom obrade zahteva.", HttpStatusCode.InternalServerError);
+                }
             }
         }
 
@@ -141,7 +144,7 @@ namespace Projekat1SYS
             return cleanedWord == reversedWord;
         }
 
-        private async Task SendResponseAsync(HttpListenerContext context, string content, HttpStatusCode statusCode)
+        private void SendResponse(HttpListenerContext context, string content, HttpStatusCode statusCode)
         {
             var response = context.Response;
             byte[] buffer = Encoding.UTF8.GetBytes(content);
@@ -152,7 +155,7 @@ namespace Projekat1SYS
 
             try
             {
-                await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                response.OutputStream.Write(buffer, 0, buffer.Length);
             }
             catch (Exception ex)
             {
