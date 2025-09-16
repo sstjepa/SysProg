@@ -1,0 +1,17 @@
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\Projekat3SYS.exe
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\Projekat3SYS.deps.json
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\Projekat3SYS.runtimeconfig.json
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\Projekat3SYS.dll
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\Projekat3SYS.pdb
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\bin\Debug\net9.0\System.Reactive.dll
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.csproj.AssemblyReference.cache
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.AssemblyInfoInputs.cache
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.AssemblyInfo.cs
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.csproj.CoreCompileInputs.cache
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat.8F6B3E28.Up2Date
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.dll
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\refint\Projekat3SYS.dll
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.pdb
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\Projekat3SYS.genruntimeconfig.cache
+D:\Repos\#C(taraba)\Projekat3SYS\Projekat3SYS\obj\Debug\net9.0\ref\Projekat3SYS.dll
